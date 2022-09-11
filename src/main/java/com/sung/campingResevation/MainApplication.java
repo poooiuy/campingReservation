@@ -11,6 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import com.sung.campingResevation.notifyLine.SendMessage;
 import com.sung.campingResevation.webCrawling.JaraIsland;
+import com.sung.campingResevation.webCrawling.WangsongLake;
 
 @SpringBootApplication
 @EnableScheduling
@@ -26,6 +27,9 @@ public class MainApplication {
 	JaraIsland jaraIsland;
 	
 	@Autowired
+	WangsongLake wangsongLake;
+	
+	@Autowired
 	SendMessage sendMessage;
 
 	public static void main(String[] args) {
@@ -39,15 +43,21 @@ public class MainApplication {
 		
 		if(jaraIslandExecute) {
 			result = jaraIsland.execute();
-			if(!result.equals("")) {
-				sendMessage.send(result);
+		}
+		
+		if(wangsongLakeExecute) {
+			String wangsongLakeResult = wangsongLake.execute();
+			if(!.equals("")){
+				if(!result.equals(""))	{
+					result = 
+				}
 			}
 		}
 		
-		String result = callWebService.execute();
 		if(!result.equals("")) {
 			sendMessage.send(result);
 		}
+		
 	}
 	
 

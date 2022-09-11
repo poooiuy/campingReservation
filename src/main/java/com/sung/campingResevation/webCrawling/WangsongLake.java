@@ -14,14 +14,14 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
-public class wangsongLake {
+public class WangsongLake {
 	
 	@Value("${url}")
     private String url;
 	
 	ObjectMapper om;
 	
-	public wangsongLake() {
+	public WangsongLake() {
 		om = new ObjectMapper();
 	}
 	
